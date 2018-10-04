@@ -1,0 +1,12 @@
+if [ $# -eq 0 ]
+  then
+    echo "Informe a versão"
+fi
+
+if [ $# -eq 1 ]
+  then
+    echo "Version $1"
+    docker build -t ifrn/ege_django_base:$1 --force-rm .
+    docker login
+    docker push ifrn/ege_django_base:$1
+fi
