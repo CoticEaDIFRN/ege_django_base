@@ -1,12 +1,23 @@
 if [ $# -eq 0 ]
   then
-    echo "Informe a versão"
+    echo "Informe apenas a versão para gerar apenas localmente: release 1.1"
+    echo "Informe -d e a versão para enviar para o Docker Hbu: release -d 1.1"
 fi
 
 if [ $# -eq 1 ]
   then
-    echo "Version $1"
+    echo ""
+    echo "Generating local version $1"
+    echo ""
     docker build -t ifrn/ege_django_base:$1 --force-rm .
+fi
+
+if [ $# -eq 1 ] && [ "$1" == "-d" ]
+  then
+    echo ""
+    echo "Generating and deploy version $2"
+    echo ""
+    docker build -t ifrn/ege_django_base:$2 --force-rm .
     docker login
-    docker push ifrn/ege_django_base:$1
+    docker push ifrn/ege_django_base:$2
 fi
