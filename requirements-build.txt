@@ -4,6 +4,9 @@ python-brfied==0.8.5
 
 # psycopg2 Installed by apk
 
+# JWT
+pyjwt==1.7.1
+
 # REST
 djangorestframework==3.9.0
 django-rest-swagger==2.2.0
