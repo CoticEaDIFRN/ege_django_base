@@ -1,4 +1,4 @@
-# ege_django_base
+# ifrn/ege.django_base
 
 A **Docker** image with **Django 2**, **psycopg2** and **gunicorn**.
 
@@ -10,7 +10,7 @@ At **build** cycle the imagem will install packages from `requirements-build.txt
 
 ```dockerfile
 
-FROM ege_django_base:1.1
+FROM ifrn/ege.django_base:1.1
 ADD requirements-custom.txt . 
 RUN pip install --upgrade -r requirements-custom.txt
 
