@@ -33,9 +33,9 @@ if [ $# -eq 2 ] && [[ "$1" == "-d" || "$1" == "-gh" || "$1" == "-dh" ]]
         echo ""
         echo "GitHub: Committing and pushing"
         echo ""
-        # git commit -m 'Release $2'
-        # git tag $2
-        # git push --tags origin master
+        git commit -m 'Release $2'
+        git tag $2
+        git push --tags origin master
     fi
 fi
 
