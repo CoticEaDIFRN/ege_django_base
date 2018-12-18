@@ -8,9 +8,9 @@ If environment variable `DJANGO_DEBUG` are set to `True` the apps **django-exten
 
 At **build** cycle the imagem will install packages from `requirements-build.txt`. If you want to add ou change packages at **build** cycle create a file like `requirements-custom.txt` and a `Dockerfile` like this:
 
-```
+```dockerfile
 
-FROM ege_django_base:1.1-alpine
+FROM ege_django_base:1.1
 ADD requirements-custom.txt . 
 RUN pip install --upgrade -r requirements-custom.txt
 
