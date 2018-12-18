@@ -10,7 +10,7 @@ At **build** cycle the imagem will install packages from `requirements-build.txt
 
 ```dockerfile
 
-FROM ege_django_base:1.1
+FROM ege.django_base:1.1
 ADD requirements-custom.txt . 
 RUN pip install --upgrade -r requirements-custom.txt
 
