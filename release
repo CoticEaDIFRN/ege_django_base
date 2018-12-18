@@ -9,7 +9,7 @@ if [ $# -eq 1 ]
     echo ""
     echo "Generating local version $1"
     echo ""
-    docker build -t ifrn/ege_django_base:$1 --force-rm .
+    docker build -t ifrn/ege/django_base:$1 --force-rm .
 fi
 
 if [ $# -eq 1 ] && [ "$1" == "-d" ]
@@ -17,7 +17,7 @@ if [ $# -eq 1 ] && [ "$1" == "-d" ]
     echo ""
     echo "Generating and deploy version $2"
     echo ""
-    docker build -t ifrn/ege_django_base:$2 --force-rm .
+    docker build -t ifrn/ege/django_base:$2 --force-rm .
     docker login
     docker push ifrn/ege_django_base:$2
 fi
