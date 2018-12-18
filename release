@@ -19,5 +19,5 @@ if [ $# -eq 1 ] && [ "$1" == "-d" ]
     echo ""
     docker build -t ifrn/ege/django_base:$2 --force-rm .
     docker login
-    docker push ifrn/ege_django_base:$2
+    docker push ifrn/ege/django_base:$2
 fi
