@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ $# -eq 0 ]
   then
     echo "Informe apenas a versão para gerar apenas localmente:"
