@@ -11,7 +11,7 @@ djangorestframework==3.9.0
 django-rest-swagger==2.2.0
 
 # Auth
-PyJWT==1.7.1
+ege-django-auth-jwt==1.0
 
 # Devel
 django-model-documentation==0.8.0
