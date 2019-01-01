@@ -1,6 +1,6 @@
 # Core
 django==2.1.4
-python-brfied==0.8.5
+python-brfied==0.8.6
 # psycopg2 Installed by apk
 
 # Theme
