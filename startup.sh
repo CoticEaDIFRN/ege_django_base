@@ -7,9 +7,9 @@ else
     gunicorn \
         wsgi:application \
         --bind 0.0.0.0:8000 \
-        --name app \
-        --user app \
-        --group app \
+        --name root \
+        --user root \
+        --group root \
         --timeout $GUNICORN_TIMEOUT \
         --workers $GUNICORN_NUM_WORKERS \
         --log-level $GUNICORN_LOG_LEVEL \
