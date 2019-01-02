@@ -4,14 +4,14 @@ python-brfied==0.8.6
 # psycopg2 Installed by apk
 
 # Theme
-ege-django-theme==0.3.7
+ege-django-theme==0.4.8
 
 # REST
 djangorestframework==3.9.0
 django-rest-swagger==2.2.0
 
 # Auth
-ege-django-auth-jwt==1.0.1
+ege-django-auth-jwt==1.0.2
 
 # Devel
 django-model-documentation==0.8.0
