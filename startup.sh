@@ -1,7 +1,20 @@
 #!/bin/sh
-pip install -r requirements-app.txt
 
-if [ "True" = "$DJANGO_DEBUG" ]; then
+
+if [[ ! -s "/firsttime.lock" ]]; then
+    if [[ -s "requirements-firsttime.txt" ]]; then
+        pip install -r requirements-firsttime.txt
+        date > /firsttime.lock
+    fi
+fi
+
+
+if [[ -s "requirements-app.txt" ]]; then
+    pip install -r requirements-app.txt
+fi
+
+
+if [[ "True" = "$DJANGO_DEBUG" ]]; then
     python3 manage.py runserver 0.0.0.0:8000
 else
     gunicorn \

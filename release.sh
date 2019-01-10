@@ -12,7 +12,7 @@ if [ $# -eq 1 ]
   then
     echo "Generating local version $1"
     echo ""
-    docker build -t ifrn/ege.django_base:$1 --force-rm .
+    docker build -t ifrn/ege_base:$1 --force-rm .
 fi
 
 if [ $# -eq 2 ] && [[ "$1" == "-d" || "$1" == "-gh" || "$1" == "-dh" ]]
@@ -25,9 +25,9 @@ if [ $# -eq 2 ] && [[ "$1" == "-d" || "$1" == "-gh" || "$1" == "-dh" ]]
         echo ""
         echo "Docker Hub: Building and sending"
         echo ""
-        docker build -t ifrn/ege.django_base:$2 --force-rm .
+        docker build -t ifrn/ege_base:$2 --force-rm .
         docker login
-        docker push ifrn/ege.django_base:$2
+        docker push ifrn/ege_base:$2
     fi
 
     if [[ "$1" == "-d" || "$1" == "-gh" ]]
