@@ -12,6 +12,8 @@ ADD requirements-build.txt .
 
 RUN pip install -r /requirements-build.txt
 
-ADD startup.sh . 
+ADD install_packages.sh .
+
+ADD startup.sh .
 WORKDIR /apps/app
 CMD /startup.sh
