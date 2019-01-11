@@ -3,7 +3,7 @@
 /install_packages.sh
 
 if [[ "True" = "$DJANGO_DEBUG" ]]; then
-    python3 manage.py runserver 0.0.0.0:8000
+    ./manage.sh runserver 0.0.0.0:8000
 else
     gunicorn \
         wsgi:application \
