@@ -3,6 +3,10 @@ django==2.1.4
 python-brfied==0.8.6
 # psycopg2 Installed by apk
 
+# EGE
+ege-theme==0.5.2
+ege-utils==1.2.1
+
 # REST
 djangorestframework==3.9.0
 django-rest-swagger==2.2.0
