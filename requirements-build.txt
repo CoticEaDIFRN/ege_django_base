@@ -1,11 +1,14 @@
 # Core
-django==2.1.4
+django==2.1.7
 python-brfied==0.8.6
+django_brfied==0.6.2
+django-daterange-filter==1.3.0
 # psycopg2 Installed by apk
 
 # EGE
 ege-theme==0.5.3
 ege-utils==1.3.0
+
 
 # REST
 djangorestframework==3.9.0
