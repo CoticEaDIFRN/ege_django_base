@@ -1,5 +1,5 @@
 # Core
-django==2.1.7
+django==2.2.4
 python-brfied==0.8.6
 django_brfied==0.6.2
 django-daterange-filter==1.3.0
@@ -11,7 +11,7 @@ ege-utils==1.3.0
 
 
 # REST
-djangorestframework==3.9.0
+djangorestframework==3.10.2
 django-rest-swagger==2.2.0
 
 # Auth
@@ -19,10 +19,11 @@ django-python3-ldap==0.11.2
 
 # Devel
 django-model-documentation==0.8.0
-django-extensions==2.1.4
-django-debug-toolbar==1.11
-ipdb==0.11
+django-extensions==2.2.1
+django-debug-toolbar==2.0
+ipdb==0.12.2
 
 # Production
-raven==6.9.0
+raven==6.10.0
 gunicorn==19.9.0
+supervisor==4.0.4
