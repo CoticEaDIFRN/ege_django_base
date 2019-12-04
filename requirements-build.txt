@@ -1,5 +1,5 @@
 # Core
-django==2.2.4
+django==2.2.8
 python-brfied==0.8.6
 django_brfied==0.6.2
 django-daterange-filter==1.3.0
