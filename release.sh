@@ -1,45 +1,64 @@
 #!/usr/bin/env bash
-
-if [ $# -eq 0 ]
-  then
-    echo "Informe apenas a versão para gerar apenas localmente:"
-    echo "  release 1.1"
-    echo "ou informe -d e a versão para enviar para o Docker Hub:"
-    echo "  release -d 1.1"
+FULL_IMAGE_NAME="ifrn/ege_base"
+PROJECT_NAME=ege_base
+if [ $# -eq 0 ]; then
+  echo ''
+  echo 'NAME '
+  echo '       release'
+  echo 'SYNOPSIS'
+  echo '       ./release.sh [-l|-g|-p|-a] <version>'
+  echo 'DESCRIPTION'
+  echo '       Create a new release $PROJECT_NAME image.'
+  echo 'OPTIONS'
+  echo '       -l         Build only locally'
+  echo '       -g         Push to Github'
+  echo '       -d         Registry on Docker Hub'
+  echo '       -a         Push and registry on Github'
+  echo '       <version>  Release version number'
+  echo 'EXAMPLES'
+  echo '       o   Build a image to local usage only:'
+  echo '                  ./release.sh -l 1.0'
+  echo '       o   Build and push to GitHub:'
+  echo '                  ./release.sh -g 1.0'
+  echo '       o   Build and registry on Docker Hub:'
+  echo '                  ./release.sh -d 1.0'
+  echo '       o   Build, push to Guthub and registry on PyPi:'
+  echo '                  ./release.sh -a 1.0'
+  echo "LAST TAG: $(git tag | tail -1 )"
+  exit
 fi
 
-if [ $# -eq 1 ]
+OPTION=$1
+VERSION=$2
+
+build_image() {
+  printf "\n\nBUILD local version $FULL_IMAGE_NAME:latest\n"
+  docker build -t $FULL_IMAGE_NAME:$VERSION --force-rm .
+}
+
+push_to_docker_hub() {
+  if [[ "$OPTION" == "-d" || "$OPTION" == "-a" ]]
   then
-    echo "Generating local version $1"
-    echo ""
-    docker build -t ifrn/ege_base:$1 --force-rm .
-fi
+    printf "\n\nDOCKER HUB project $PROJECT_NAME v$VERSION\n"
+    docker login \
+    && docker push $FULL_IMAGE_NAME:$VERSION
+  fi
+}
 
-if [ $# -eq 2 ] && [[ "$1" == "-d" || "$1" == "-gh" || "$1" == "-dh" ]]
+push_to_github() {
+  if [[ "$OPTION" == "-g" || "$OPTION" == "-a" ]]
   then
-    echo "Generating and deploy version $2"
-    echo ""
+    printf "\n\nGITHUB: Pushing\n"
+    git tag $VERSION \
+    && git push --tags origin master
+  fi
+}
 
-    if [[ "$1" == "-d" || "$1" == "-dh" ]]
-      then
-        echo ""
-        echo "Docker Hub: Building and sending"
-        echo ""
-        docker build -t ifrn/ege_base:$2 --force-rm .
-        docker login
-        docker push ifrn/ege_base:$2
-    fi
+build_image \
+&& push_to_docker_hub \
+&& push_to_github \
+&& push_to_docker_hub
 
-    if [[ "$1" == "-d" || "$1" == "-gh" ]]
-      then
-        echo ""
-        echo "GitHub: Committing and pushing"
-        echo ""
-        git commit -m 'Release $2'
-        git tag $2
-        git push --tags origin master
-    fi
-fi
-
+echo $?
 echo ""
 echo "Done."
