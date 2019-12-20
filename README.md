@@ -1,6 +1,6 @@
 # ifrn/ege_base
 
-A **Docker** image with **Django 2**, **psycopg2** and **gunicorn**.
+A **Docker** image with **Django 3**, **psycopg2** and **gunicorn**.
 
 Added **python-brfied** to help to read environment variables.
 
@@ -10,7 +10,7 @@ At **build** cycle the imagem will install packages from `requirements-build.txt
 
 ```dockerfile
 
-FROM ifrn/ege_base:1.1
+FROM ifrn/ege_base:1.5.8
 ADD requirements-custom.txt . 
 RUN pip install --upgrade -r requirements-custom.txt
 
