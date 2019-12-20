@@ -1,13 +1,13 @@
 # Core
 django==3.0
-sc4py==0.1.0
+sc4py==0.1.1
 django_brfied==0.6.2
 django-daterange-filter==1.3.0
 # psycopg2 Installed by apk
 
 # EGE
 ege-theme==0.5.4
-ege-utils==1.4.0
+ege-utils==1.4.1
 
 
 # REST
