@@ -57,7 +57,6 @@ push_to_github() {
 build_image \
 && push_to_docker_hub \
 && push_to_github \
-&& push_to_docker_hub
 
 echo $?
 echo ""
