@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 FULL_IMAGE_NAME="ifrn/suap_ead_base"
-PROJECT_NAME=ege_base
+PROJECT_NAME=suap_ead_base
 if [ $# -eq 0 ]; then
   echo ''
   echo 'NAME '

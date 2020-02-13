@@ -1,4 +1,4 @@
-# ifrn/ege_base
+# ifrn/suap_ead_base
 
 A **Docker** image with **Django 3**, **psycopg2** and **gunicorn**.
 
@@ -10,7 +10,7 @@ At **build** cycle the imagem will install packages from `requirements-build.txt
 
 ```dockerfile
 
-FROM ifrn/ege_base:1.5.8
+FROM ifrn/suap_ead_base:1.5.8
 ADD requirements-custom.txt . 
 RUN pip install --upgrade -r requirements-custom.txt
 
