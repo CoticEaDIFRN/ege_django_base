@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-FULL_IMAGE_NAME="ifrn/ege_base"
+FULL_IMAGE_NAME="ifrn/suap_ead_base"
 PROJECT_NAME=ege_base
 if [ $# -eq 0 ]; then
   echo ''
