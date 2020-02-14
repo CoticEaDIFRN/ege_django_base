@@ -1,6 +1,6 @@
 # Core
 django==3.0.3
-suap_ead==0.1.1
+suap_ead==0.1.2
 django-daterange-filter==1.3.0
 
 # REST
