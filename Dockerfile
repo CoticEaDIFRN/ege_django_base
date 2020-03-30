@@ -4,8 +4,8 @@ ENV PYTHONUNBUFFERED 1
 
 RUN apk update && \
     apk add postgresql-libs && \
-    apk add --virtual .build-deps gcc python3-dev musl-dev postgresql-dev && \
-    pip install psycopg2-binary && \
+    apk add --virtual .build-deps gcc python3-dev musl-dev postgresql-dev jpeg-dev zlib-dev && \
+    pip install psycopg2-binary pillow && \
     apk --purge del .build-deps gcc python3-dev musl-dev postgresql-dev
 
 ADD requirements-build.txt . 
