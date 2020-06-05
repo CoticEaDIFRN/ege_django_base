@@ -1,5 +1,5 @@
 # Core
-django==3.0.3
+django==3.0.7
 
 # REST
 django-rest-swagger==2.2.0
