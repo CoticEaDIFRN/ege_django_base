@@ -8,11 +8,6 @@ RUN apk update && \
     pip install psycopg2-binary pillow social-auth-app-django && \
     apk --purge del gcc python3-dev musl-dev postgresql-dev jpeg-dev zlib-dev libffi-dev
 
-
-
-RUN apk update && \
-    apk --purge del .build-deps
-
 ADD install_packages.sh .
 ADD startup.sh .
 
