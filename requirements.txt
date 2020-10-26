@@ -4,7 +4,7 @@ django==3.1.2
 # My
 sc4py
 suap-ead==0.1.8
-suapintegration==1.0.0
+suapintegration==1.0.1
 
 # REST
 django-rest-swagger==2.2.0
