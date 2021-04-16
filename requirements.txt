@@ -34,7 +34,7 @@ django-markdownx==3.0.1
 # Devel
 django-model-documentation==0.8.0
 django-extensions==3.0.9
-django-debug-toolbar==2.2
+django-debug-toolbar==2.2.1
 ipdb==0.13.3
 
 # Production
