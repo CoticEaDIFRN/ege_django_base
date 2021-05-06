@@ -1,5 +1,5 @@
 # Core
-django==3.1.2
+django==3.1.8
 
 # Utils
 DateTimeRange==1.0.0 
